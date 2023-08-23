@@ -13,7 +13,7 @@ h1 {
 .restaurant-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 20px;
 }
 
