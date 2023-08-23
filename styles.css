@@ -26,9 +26,9 @@ h1 {
 }
 
 .restaurant img {
-    width: 100%;
-    height: auto;
-    display: inline-block;
+    display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 }
 
 .restaurant h2 {
