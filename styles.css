@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: 	FF69B4;
+    background-color: #f2f2f2;
 }
 
 h1 {
@@ -15,7 +15,6 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
- 
 }
 
 .restaurant {
@@ -24,16 +23,11 @@ h1 {
     padding: 10px;
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-        flex-direction: row 
-
 }
 
 .restaurant img {
-    display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        flex-direction: row 
-
+    width: 100%;
+    height: auto;
 }
 
 .restaurant h2 {
