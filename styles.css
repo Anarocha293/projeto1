@@ -27,17 +27,17 @@ header {
 }
 .container {
             max-width: 960px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: DB7093;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
    
    
-padding: 10px;
+padding: 20px;
    
    
-background-color:#fff ;
+background-color:DB7093 ;
 
 }
 
@@ -46,7 +46,7 @@ background-color:#fff ;
    color: #87CEEB;
     border: 2px dashed #FF69B4; /* Adiciona uma borda tracejada de 2px com cor #ddd */
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 30px;
         background-color: #fff;
    
 }
