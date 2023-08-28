@@ -6,11 +6,11 @@ body, h1, h2, p {
 
 
 header {
-  background-color: blue;
+  background-color: rgb(99, 172, 162);
     color: black;
     text-align: center;
     padding: 20px;
-    border-bottom: 5px solid Plum; /* Cor da borda no cabeçalho */
+    border-bottom: 5px solid rgb(221, 197, 160); /* Cor da borda no cabeçalho */
    
    
 }
