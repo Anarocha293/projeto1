@@ -1,6 +1,7 @@
 body, h1, h2, p {
     margin: 0;
     padding: 10;
+    background-color: #FFFFFF;
 }
 
 
@@ -15,7 +16,7 @@ header {
 }
 
 .restaurante {
-   border: 2px dashed #FF69B4;
+   border: 2px dashed F08080;
         margin-bottom: 20px;
         padding: 10px;
         background-color: #fff;
