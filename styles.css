@@ -6,22 +6,22 @@ body, h1, h2, p {
 
 
 header {
-  background-color: #333;
-    color: red;
+  background-color: blue;
+    color: black;
     text-align: center;
     padding: 20px;
-    border-bottom: 5px solid #87CEEB; /* Cor da borda no cabeçalho */
+    border-bottom: 5px solid Plum; /* Cor da borda no cabeçalho */
    
    
 }
 
 .restaurante {
-   border: 2px dashed FF69B4;
+   border: 2px dashed LightCoral;
         margin-bottom: 30px;
         padding: 10px;
-        background-color: #fff;
+        background-color: Violet;
     padding: 10px;
-        background-color: #E6E6E6;
+        background-color: Turquoise;
    
  
 }
@@ -29,7 +29,7 @@ header {
             max-width: 960px;
             margin: 30px auto;
             padding: 40px;
-            background-color: DB7093;
+            background-color: Plum;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
    
@@ -37,14 +37,14 @@ header {
 padding: 20px;
    
    
-background-color:DB7093 ;
+background-color:LightSeaGreen ;
 
 }
 
 
 .restaurante h2 {
    color: #87CEEB;
-    border: 2px dashed #FF69B4; /* Adiciona uma borda tracejada de 2px com cor #ddd */
+    border: 2px dashed LightSeaGreen; /* Adiciona uma borda tracejada de 2px com cor #ddd */
         margin-bottom: 20px;
         padding: 30px;
         background-color: #fff;
