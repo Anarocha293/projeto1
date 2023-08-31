@@ -1,65 +1,51 @@
-body, h1, h2, p {
-    margin: 0;
-    padding: 10;
-    background-color: PaleVioletRed;
-}
-
-
-header {
-  background-color: rgb(99, 172, 162);
-    color: black;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 5px solid rgb(221, 197, 160); /* Cor da borda no cabeçalho */
-   
-   
-}
-
-.restaurante {
-   border: 2px dashed LightCoral;
-        margin-bottom: 30px;
-        padding: 10px;
-        background-color: Violet;
-    padding: 10px;
-        background-color: Turquoise;
-   
- 
-}
-.container {
-            max-width: 960px;
-            margin: 30px auto;
-            padding: 40px;
-            background-color: Plum;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      gap: 20px 5px;
-      padding: 20px;
-   
-   
-background-color:LightSeaGreen ;
-
-}
-        
-   
-   
-
-
-
-.restaurante h2 {
-   color: #87CEEB;
-    border: 2px dashed LightSeaGreen; /* Adiciona uma borda tracejada de 2px com cor #ddd */
-        margin-bottom: 20px;
-        padding: 30px;
-        background-color: #fff;
-   
-}
-
-
-
-main {
-    display: flex;
+.tabela {
+    width: 100%;
+    max-width: 10000px;
+    background-color: #000000fb;
+    border-style: solid;
+    border-color: #050505;
     
-   
-   
-flex-wrap: wrap;
-    justify-content: space-around;
 }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 110px;
+    
+}
+
+.sla{
+display:flex;
+}
+
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    max-width: 450%;
+    max-height: 800%;
+    overflow: hidden; /* Impede que a imagem se estenda além do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-image {
+    max-width: 100%; /* Controla o tamanho máximo da imagem ampliada */
+    max-height: 100%; /* Controla o tamanho máximo da imagem ampliada */
+  }
