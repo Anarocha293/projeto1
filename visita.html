@@ -1,55 +1,60 @@
-
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visita</title>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Visita Técnica </title>
 </head>
-  <body>
-    <header>
-        <h1>Relatório Visita Técnica: </h1>
-    </header>
-<div class="gallery">
-  <div class="sla">
-  <img src="foto1.jpeg" alt="Imagem 1" onclick="openModal(this)">
-  <img src="foto2.jpeg" alt="Imagem 2" onclick="openModal(this)">
-  <img src="foto3.jpeg" alt="Imagem 3" onclick="openModal(this)">
-  <img src="foto4.jpeg" alt="Imagem 4" onclick="openModal(this)">
-  <img src="foto5.jpeg" alt="Imagem 5" onclick="openModal(this)">
-  <img src="foto6.jpeg" alt="Imagem 6" onclick="openModal(this)">
-  <div class="sla"></div>
-  <img src="foto7.jpeg" alt="Imagem 7" onclick="openModal(this)">
-  <img src="foto8.jpeg" alt="Imagem 8" onclick="openModal(this)">
-  <img src="foto9.jpeg" alt="Imagem 9" onclick="openModal(this)">
-  <img src="foto10.jpeg" alt="Imagem 10" onclick="openModal(this)">
+<body>
+    <div class="gallery">
+        <a class="fancybox" href="foto1.jpeg" data-fancybox="gallery" data-caption="Imagem 1">
+            <img src="foto1.jpeg" alt="Imagem 1">
+        </a>
+        <a class="fancybox" href="foto2.jpeg" data-fancybox="gallery" data-caption="Imagem 2">
+            <img src="foto2.jpeg" alt="Imagem 2">
+        </a>
+        <a class="fancybox" href="foto3.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto3.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="foto4.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto4.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="foto5.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto5.jpeg" alt="Imagem 3">
+          
+        </a>
 
-</div>
-
-<div class="modal" id="modal">
-  <span class="modal-content">
-    <img id="modal-image" src="" alt="Imagem Ampliada">
-  </span>
-</div>
-
-<script>
-function openModal(imgElement) {
-  const modal = document.getElementById("modal");
-  const modalImage = document.getElementById("modal-image");
-
-  modalImage.src = imgElement.src;
-  modal.style.display = "flex";
-
-  modal.addEventListener("click", closeModal);
-}
-
-function closeModal() {
-  const modal = document.getElementById("modal");
-  modal.style.display = "none";
-  modal.removeEventListener("click", closeModal);
-} 
-  </body>
+       <a class="fancybox" href="foto6.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto6.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="foto7.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto7.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="foto8.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto8.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="foto9.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto9.jpeg" alt="Imagem 3">
+          
+        </a>
+       <a class="fancybox" href="fot10.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
+            <img src="foto10.jpeg" alt="Imagem 3">
+          
+        </a>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
+</body>
 </html>
-
