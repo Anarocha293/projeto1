@@ -1,63 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Visita Técnica </title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Visita Técnica/title>
+ <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
 </head>
 <body>
+  <header>
+      <h1>Relátorio Viisita Técnica:</h1>
+  </header>
     <header>
-        <h1>Relatório da Viisita Técnica: </h1>
+        <h1>Galeria de Fotos:</h1>
     </header>
-    <div class="gallery">
-        <a class="fancybox" href="foto1.jpeg" data-fancybox="gallery" data-caption="Imagem 1">
-            <img src="foto1.jpeg" alt="Imagem 1">
-        </a>
-        <a class="fancybox" href="foto2.jpeg" data-fancybox="gallery" data-caption="Imagem 2">
-            <img src="foto2.jpeg" alt="Imagem 2">
-        </a>
-        <a class="fancybox" href="foto3.jpeg" data-fancybox="gallery" data-caption="Imagem 3">
-            <img src="foto3.jpeg" alt="Imagem 3">
-          
-        </a>
-       <a class="fancybox" href="foto4.jpeg" data-fancybox="gallery" data-caption="Imagem 4">
-            <img src="foto4.jpeg" alt="Imagem 4">
-          
-        </a>
-       <a class="fancybox" href="foto5.jpeg" data-fancybox="gallery" data-caption="Imagem 5">
-            <img src="foto5.jpeg" alt="Imagem 5">
-          
-        </a>
-
-       <a class="fancybox" href="foto6.jpeg" data-fancybox="gallery" data-caption="Imagem 6">
-            <img src="foto6.jpeg" alt="Imagem 6">
-          
-        </a>
-       <a class="fancybox" href="foto7.jpeg" data-fancybox="gallery" data-caption="Imagem 7">
-            <img src="foto7.jpeg" alt="Imagem 7">
-          
-        </a>
-       <a class="fancybox" href="foto8.jpeg" data-fancybox="gallery" data-caption="Imagem 8">
-            <img src="foto8.jpeg" alt="Imagem 8">
-          
-        </a>
-       <a class="fancybox" href="foto9.jpeg" data-fancybox="gallery" data-caption="Imagem 9">
-            <img src="foto9.jpeg" alt="Imagem 9">
-          
-        </a>
-       <a class="fancybox" href="fot10.jpeg" data-fancybox="gallery" data-caption="Imagem 10">
-            <img src="foto10.jpeg" alt="Imagem 10">
-          
-        </a>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".fancybox").fancybox();
-        });
-    </script>
+    <a data-fancybox="gallery" href="fotosvisita/foto1.jpeg"><img src="fotosvisita/foto1.jpeg"></a>
+    <a data-fancybox="gallery" href="fotosvisita/foto2.jpeg"><img src="fotosvisita/foto2.jpeg"></a>
 </body>
 </html>
