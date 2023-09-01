@@ -5,31 +5,7 @@ body {
     background-color: PaleVioletRed;
 }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px;
+.h3{
+    <font color="purple"></font> 
 }
 
-.fancybox {
-    display: block;
-    max-width: 300px;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    transition: border-color 0.3s;
-}
-
-.fancybox img {
-    max-width: 100%;
-    height: auto;
-}
-
-.fancybox:hover {
-    border-color: PaleVioletRed;
-}
-.header{
-    text-align: center
-}
