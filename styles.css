@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: PaleVioletRed;
 }
 
 .gallery {
@@ -28,8 +28,8 @@ body {
 }
 
 .fancybox:hover {
-    border-color: #ff6600;
+    border-color: PaleVioletRed;
 }
-.h1{
+.header{
     text-align: center
 }
