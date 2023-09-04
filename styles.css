@@ -1,16 +1,16 @@
+Body{
+backgroundcolor- pink
+}
+
+
 .gallery {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 10px; /* Espaçamento entre as imagens */
 
-
-
 }
 
-Body{
-backgroundcolor- pink
-}
 
 /* Estilos para as imagens na galeria */
 .gallery a {
