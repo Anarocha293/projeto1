@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Visita Técnica</title>
- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
-     <link rel="stylesheet" type="text/css" href="styles.css">
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos com Fancybox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="visitas.css">
 </head>
- <body>
-  <header>
-<main>
-      <h1>Relátorio Visita Técnica:</h1>
+    <header>
+        < <h1>Relátorio Visita Técnica:</h1>
    <h3>
     <p>Vou falar um pouco da nossa visita ao IF de Colorado, foi uma experiência bem bacana, nos divertimos muito, suamos muito também, a ida até lá foi bem legal, pessoal estava  bem a vontade, comemos e rimos a beça.
     </p> <p>Chegamos lá fomos muito bem recepcionados, nos deram bastante atenção, tivemos uma breve reunião mostrando como era a estrutura do Ifro e dps fomos direto almoçar, depois tivemos algumas palestras com o pessoal do Câmera Escura, falaram bastante sobre fotos, alguns ângulos sobre fotos e depois sobre alguns projetos que eles desenvolvem ali.
@@ -23,12 +17,13 @@
     , mas foi uma experiência única, que tenho certeza que ficará registrado em nossos corações.</p>
     <p> Um agradecimento final aos professores Douglas e Aremilson, que nos propuseram esse dia tão divertido, se não fosse eles tenho certeza que não teria acontecido, que venham os próximos!!!</p>
    </h3>
-  </header>
-    <header>
-        <h1>Galeria de Fotos:</h1>
     </header>
-
-    <a data-fancybox="gallery" href="fotosvisita/foto1.jpeg"> <img src="fotosvisita/foto1.jpeg" height="135" width="125" align="Center"></a>
+    <header>
+        <h1> Galeria de fotos </h1>
+    </header>
+<body>
+    <div class="gallery">
+      <a data-fancybox="gallery" href="fotosvisita/foto1.jpeg"> <img src="fotosvisita/foto1.jpeg" height="135" width="125" align="Center"></a>
     <a data-fancybox="gallery" href="fotosvisita/foto2.jpeg"><img src="fotosvisita/foto2.jpeg"height="135" width="125" align="Center"></a>
     <a data-fancybox="gallery" href="fotosvisita/foto3.jpeg"><img src="fotosvisita/foto3.jpeg" height="135" width="125" align="Center"></a>
     <a data-fancybox="gallery" href="fotosvisita/foto4.jpeg"><img src="fotosvisita/foto4.jpeg"height="135" width="125" align="Center"></a>
@@ -38,7 +33,23 @@
     <a data-fancybox="gallery" href="fotosvisita/foto8.jpeg"><img src="fotosvisita/foto8.jpeg"height="135" width="125" align="Center"></a>
     <a data-fancybox="gallery" href="fotosvisita/foto9.jpeg"><img src="fotosvisita/foto9.jpeg" height="135" width="125" align="Center"></a>
     <a data-fancybox="gallery" href="fotosvisita/foto10.jpeg"><img src="fotosvisita/foto10.jpeg"height="135" width="125" align="Center"></a>
+    </div>
 
-</main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("[data-fancybox='images']").fancybox({
+                buttons: [
+                    "ampliar",
+                    "slideShow",
+                    "fullScreen",
+                    "baixar",
+                    "thumbs",
+                    "close"
+                ],
+            });
+        });
+    </script>
 </body>
 </html>
