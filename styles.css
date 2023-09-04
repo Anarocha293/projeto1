@@ -15,7 +15,7 @@ body{
 	/* definimos a altura do box */
 	height:100px;
 	/* definimos a cor de fundo do box */
-	background-color:#666;
+	background-color: white;
 	/* definimos o quão arredondado irá ficar nosso box */
 	border-radius: 10px;
 
@@ -33,7 +33,10 @@ body{
     height: auto;
     transition: transform 0.2s ease-in-out;
      background-color: LightCyan;
-   
+   background-color: white;
+	/* definimos o quão arredondado irá ficar nosso box */
+	border-radius: 10px;
+
 }
 
 .gallery img:hover {
