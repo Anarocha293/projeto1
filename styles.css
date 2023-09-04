@@ -5,3 +5,24 @@ body {
     background-color: PaleVioletRed;
     color: purple;
 }
+
+.fancybox-button {
+background-color: PaleVioletRed;
+border: none;
+font-size: 18px;
+margin: 5px;
+cursor: pointer;
+}
+
+
+.fancybox-button--close {
+font-size: 24px;
+background-color: purple;
+}
+
+.fancybox-caption {
+background-color: violet
+font-size: 14px;
+text-align: center;
+text-decoration: none;
+}
