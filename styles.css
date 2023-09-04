@@ -1,7 +1,63 @@
- body {
-    font-family: Arial, sans-serif;
+Body{
+   font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: pink;
-    color: blue
-      }
+    padding: 0
+backgroundcolor- pink
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre as imagens */
+   
+   
+
+}
+
+
+.gallery a {
+    text-decoration: none;
+    background-color: LightCyan;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+     background-color: LightCyan;
+   
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+}
+
+/* Estilos para o lightbox (Fancybox) */
+.fancybox-slide {
+    background-color:purple;
+}
+
+/* Estilos para os botões de controle  */
+.fancybox-button {
+    background-color: MediumVioletRed;
+    border: none;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para o ícone de fechar no lightbox */
+.fancybox-button--close {
+    font-size: 24px;
+     background-color: LightPink;
+}
+
+/* Estilos para a legenda da imagem no lightbox */
+.fancybox-caption {
+   background-color:MediumVioletRed;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
