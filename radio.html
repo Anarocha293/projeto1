@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
         }
 
         #playlist {
@@ -31,15 +32,17 @@
 </head>
 <body>
     <h1>Minha Playlist</h1>
+    <ul id="playlist">
+        <li data-src="lapada.mp3">Música 1</li>
+        <li data-src="canudinho.mp3">Música 2</li>
+        <li data-src="hilux.mp3">Música 3</li>
+        <li data-src="taok.mp3">Música 4</li>
+        <li data-src="trompete.mp3">Música 5</li>
+    </ul>
     
-     <h3>Solteiro Forçado: </h3>
- <audio controls>
-	<source src="canudinho.mp3" type="audio/mpeg">
-</audio>
-	  <h3>Menos é Mais: </h3>
-    <audio controls>
-	<source src="lapada.mp3" type="audio/mpeg">
-</audio>
+    <audio id="audioPlayer" controls>
+        Seu navegador não suporta a tag de áudio.
+    </audio>
 
     <div id="controls">
         <button onclick="prevSong()">Anterior</button>
@@ -83,4 +86,3 @@
     </script>
 </body>
 </html>
-
