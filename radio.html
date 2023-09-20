@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #playlist {
+            list-style: none;
+            padding: 0;
+        }
+
+        #playlist li {
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #audioPlayer {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #controls {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minha Playlist</h1>
+    <ul id="playlist">
+        <li data-src="lapada.mp3">Música 1</li>
+        <li data-src="canudinho.mp3">Música 2</li>
+        <li data-src="hilux.mp3">Música 3</li>
+        <li data-src="halls.mp3">Música 4</li>
+        <li data-src="balde.mp3">Música 5</li>
+    </ul>
+    
+    <audio id="audioPlayer" controls>
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <div id="controls">
+        <button onclick="prevSong()">Anterior</button>
+        <button onclick="nextSong()">Próxima</button>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playlist = document.getElementById("playlist");
+        const playlistItems = playlist.getElementsByTagName("li");
+        let currentSongIndex = 0;
+
+        function playSong(index) {
+            const song = playlistItems[index];
+            const songFile = song.getAttribute("data-src");
+            audioPlayer.src = songFile;
+            audioPlayer.play();
+            currentSongIndex = index;
+        }
+
+        function nextSong() {
+            if (currentSongIndex < playlistItems.length - 1) {
+                playSong(currentSongIndex + 1);
+            }
+        }
+
+        function prevSong() {
+            if (currentSongIndex > 0) {
+                playSong(currentSongIndex - 1);
+            }
+        }
+
+        playlist.addEventListener("click", function (e) {
+            if (e.target && e.target.nodeName === "LI") {
+                const index = Array.from(playlistItems).indexOf(e.target);
+                playSong(index);
+            }
+        });
+
+        playSong(currentSongIndex);
+    </script>
+</body>
+</html>
 
