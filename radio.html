@@ -3,86 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist</title>
+    <title>Meu Player de Música</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
         }
-
-        #playlist {
-            list-style: none;
-            padding: 0;
+        h1 {
+            font-size: 24px;
         }
-
-        #playlist li {
-            margin: 5px;
+        #music-player {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        audio {
+            width: 100%;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
             cursor: pointer;
         }
-
-        #audioPlayer {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        #controls {
-            text-align: center;
+        button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
-    <h1>Minha Playlist</h1>
-    <ul id="playlist">
-        <li data-src="lapada.mp3">Música 1</li>
-        <li data-src="canudinho.mp3">Música 2</li>
-        <li data-src="hilux.mp3">Música 3</li>
-        <li data-src="taok.mp3">Música 4</li>
-        <li data-src="trompete.mp3">Música 5</li>
-    </ul>
-    
-    <audio id="audioPlayer" controls>
-        Seu navegador não suporta a tag de áudio.
-    </audio>
+    <h1>Meu Player de Música</h1>
+    <div id="music-player">
+        <audio id="audio-player" controls>
+            <source src="lapada.mp3" type="audio/mpeg">
+        </audio>
+        <button id="prev-button">Anterior</button>
+        <button id="play-pause-button">Play</button>
+        <button id="next-button">Próxima</button>
 
-    <div id="controls">
-        <button onclick="prevSong()">Anterior</button>
-        <button onclick="nextSong()">Próxima</button>
+        div id="music-player">
+        <audio id="audio-player" controls>
+            <source src="hilux.mp3" type="audio/mpeg">
+        </audio>
+        <button id="prev-button">Anterior</button>
+        <button id="play-pause-button">Play</button>
+        <button id="next-button">Próxima</button>
+
+        div id="music-player">
+        <audio id="audio-player" controls>
+            <source src="halls.mp3" type="audio/mpeg">
+        </audio>
+        <button id="prev-button">Anterior</button>
+        <button id="play-pause-button">Play</button>
+        <button id="next-button">Próxima</button>
+        <ul id="playlist">
+            <li><a href="lapada.mp3">Música 1</a></li>
+            <li><a href="hilux.mp3">Música 2</a></li>
+            <li><a href="halls.mp3">Música 3</a></li>
+            <li><a href="para.mp3">Música 4</a></li>
+            <li><a href="taok.mp3">Música 5</a></li>
+            <li><a href="trompete.mp3">Música 6</a></li>
+            <li><a href="vaquejada.mp3">Música 7</a></li>
+            <li><a href="foguete.mp3">Música 8</a></li>
+            <li><a href="canudinho.mp3">Música 9</a></li>
+            <li><a href="balde.mp3">Música 10</a></li>
+        </ul>
     </div>
 
     <script>
-        const audioPlayer = document.getElementById("audioPlayer");
-        const playlist = document.getElementById("playlist");
-        const playlistItems = playlist.getElementsByTagName("li");
-        let currentSongIndex = 0;
+        const audioPlayer = document.getElementById('audio-player');
+        const prevButton = document.getElementById('prev-button');
+        const playPauseButton = document.getElementById('play-pause-button');
+        const nextButton = document.getElementById('next-button');
+        const playlist = document.getElementById('playlist').querySelectorAll('a');
+        let currentTrack = 0;
 
-        function playSong(index) {
-            const song = playlistItems[index];
-            const songFile = song.getAttribute("data-src");
-            audioPlayer.src = songFile;
-            audioPlayer.play();
-            currentSongIndex = index;
+        function loadTrack(trackIndex) {
+            audioPlayer.src = playlist[trackIndex].href;
         }
 
-        function nextSong() {
-            if (currentSongIndex < playlistItems.length - 1) {
-                playSong(currentSongIndex + 1);
+        loadTrack(currentTrack);
+
+        function playPause() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseButton.textContent = 'Pausar';
+            } else {
+                audioPlayer.pause();
+                playPauseButton.textContent = 'Play';
             }
         }
 
-        function prevSong() {
-            if (currentSongIndex > 0) {
-                playSong(currentSongIndex - 1);
+        function nextTrack() {
+            currentTrack++;
+            if (currentTrack >= playlist.length) {
+                currentTrack = 0;
             }
+            loadTrack(currentTrack);
+            playPause();
         }
 
-        playlist.addEventListener("click", function (e) {
-            if (e.target && e.target.nodeName === "LI") {
-                const index = Array.from(playlistItems).indexOf(e.target);
-                playSong(index);
+        function prevTrack() {
+            currentTrack--;
+            if (currentTrack < 0) {
+                currentTrack = playlist.length - 1;
             }
-        });
+            loadTrack(currentTrack);
+            playPause();
+        }
 
-        playSong(currentSongIndex);
+        audioPlayer.addEventListener('ended', nextTrack);
+        playPauseButton.addEventListener('click', playPause);
+        nextButton.addEventListener('click', nextTrack);
+        prevButton.addEventListener('click', prevTrack);
     </script>
 </body>
 </html>
