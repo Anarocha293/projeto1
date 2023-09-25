@@ -3,157 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Player de Música</title>
+    <title>Playlist</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background color: PaleVioletRed;
         }
-        h1 {
-            font-size: 24px;
+
+        #playlist {
+            list-style: none;
+            padding: 0;
         }
-        #music-player {
-            width: 300px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            padding: 20px;
-        }
-        audio {
-            width: 100%;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: #fff;
-            border: none;
+
+        #playlist li {
+            margin: 5px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #2980b9;
+
+        #audioPlayer {
+            width: 100%;
+            margin-top: 10px;
         }
-        h3{
-            color: red
+
+        #controls {
+            text-align: center;
         }
     </style>
-    
 </head>
 <body>
-    <h1> Playlist de Músicas:</h1>
-    <div id="music-player">
-            <h3>Música 1 - Lapada Dela</h3>
+    <h1>Minha Playlist</h1>
+    <ul id="playlist">
+        <li data-src="lapada.mp3">Música 1</li>
+        <li data-src="balde.mp3">Música 2</li>
+        <li data-src="taok.mp3">Música 3</li>
+        <li data-src="lapada.mp3">Música 4</li>
+        <li data-src="hilux.mp3">Música 5</li>
+        <li data-src="para.mp3">Música 1</li>
+        <li data-src="halls.mp3">Música 2</li>
+        <li data-src="trompete.mp3">Música 3</li>
+        <li data-src="vaquejada.mp3">Música 4</li>
+        <li data-src="canudinho.mp3">Música 5</li>
+    </ul>
+    
+    <audio id="audioPlayer" controls>
+        Seu navegador não suporta a tag de áudio.
+    </audio>
 
-        <audio id="audio-player" controls>
-            <source src="lapada.mp3" type="audio/mpeg">
-        </audio>
-            <h3>Música 2- Hilux</h3>
-        <audio id="audio-player" controls>
-            <source src="hilux.mp3" type="audio/mpeg">
-        </audio>
-         <h3>Música 3- Toca O Trompete</h3>
-        <audio id="audio-player" controls>
-            <source src="trompete.mp3" type="audio/mpeg">
-        </audio>
-         <h3>Música 4- Não  Para</h3>
-        <audio id="audio-player" controls>
-            <source src="para.mp3" type="audio/mpeg">
-        </audio>
-       
-         <h3>Música 5- Oi Balde</h3>
-        <audio id="audio-player" controls>
-            <source src="balde.mp3" type="audio/mpeg">
-        </audio>
-       
-         <h3>Música 6- Barulho Do Foguete </h3>
-        <audio id="audio-player" controls>
-            <source src="foguete.mp3" type="audio/mpeg">
-        </audio>
-      
-         <h3>Música 7- Halls</h3>
-        <audio id="audio-player" controls>
-            <source src="halls.mp3" type="audio/mpeg">
-        </audio>
-       
-         <h3>Música 8- Canudinho</h3>
-        <audio id="audio-player" controls>
-            <source src="canudinho.mp3" type="audio/mpeg">
-        </audio>
-        
-         <h3>Música 9- Ta Ok</h3>
-        <audio id="audio-player" controls>
-            <source src="taok.mp3" type="audio/mpeg">
-        </audio>
-       
-         <h3>Música 10- Vaquejada</h3>
-        <audio id="audio-player" controls>
-            <source src="vaquejada.mp3" type="audio/mpeg">
-        </audio>
-        
-        <button id="prev-button">Anterior</button>
-        <button id="play-pause-button">Play</button>
-        <button id="next-button">Próxima</button>
-        <ul id="playlist">
-            <li><a href="lapada.mp3">Música 1</a></li>
-            <li><a href="hilux">Música 2</a></li>
-            <li><a href="trompete.mp3">Música 3</a></li>
-            <li><a href=para.mp3">Música 4</a></li>
-            <li><a href="balde.mp3">Música 5</a></li>
-            <li><a href="foguete.mp3">Música 6</a></li>
-            <li><a href="halls.mp3">Música 7</a></li>
-            <li><a href="canudinho.mp3">Música 8</a></li>
-            <li><a href="taok.mp3">Música 9</a></li>
-            <li><a href="vaquejada.mp3">Música 10</a></li>
-        </ul>
+    <div id="controls">
+        <button onclick="prevSong()">Anterior</button>
+        <button onclick="nextSong()">Próxima</button>
     </div>
 
     <script>
-        const audioPlayer = document.getElementById('audio-player');
-        const prevButton = document.getElementById('prev-button');
-        const playPauseButton = document.getElementById('play-pause-button');
-        const nextButton = document.getElementById('next-button');
-        const playlist = document.getElementById('playlist').querySelectorAll('a');
-        let currentTrack = 0;
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playlist = document.getElementById("playlist");
+        const playlistItems = playlist.getElementsByTagName("li");
+        let currentSongIndex = 0;
 
-        function loadTrack(trackIndex) {
-            audioPlayer.src = playlist[trackIndex].href;
+        function playSong(index) {
+            const song = playlistItems[index];
+            const songFile = song.getAttribute("data-src");
+            audioPlayer.src = songFile;
+            audioPlayer.play();
+            currentSongIndex = index;
         }
 
-        loadTrack(currentTrack);
-
-        function playPause() {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseButton.textContent = 'Pausar';
-            } else {
-                audioPlayer.pause();
-                playPauseButton.textContent = 'Play';
+        function nextSong() {
+            if (currentSongIndex < playlistItems.length - 1) {
+                playSong(currentSongIndex + 1);
             }
         }
 
-        function nextTrack() {
-            currentTrack++;
-            if (currentTrack >= playlist.length) {
-                currentTrack = 0;
+        function prevSong() {
+            if (currentSongIndex > 0) {
+                playSong(currentSongIndex - 1);
             }
-            loadTrack(currentTrack);
-            playPause();
         }
 
-        function prevTrack() {
-            currentTrack--;
-            if (currentTrack < 0) {
-                currentTrack = playlist.length - 1;
+        playlist.addEventListener("click", function (e) {
+            if (e.target && e.target.nodeName === "LI") {
+                const index = Array.from(playlistItems).indexOf(e.target);
+                playSong(index);
             }
-            loadTrack(currentTrack);
-            playPause();
-        }
+        });
 
-        audioPlayer.addEventListener('ended', nextTrack);
-        playPauseButton.addEventListener('click', playPause);
-        nextButton.addEventListener('click', nextTrack);
-        prevButton.addEventListener('click', prevTrack);
+        playSong(currentSongIndex);
     </script>
 </body>
 </html>
